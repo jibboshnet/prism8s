@@ -1,9 +1,9 @@
 window.CONFIG = {
-  crawl: `For weather updates any time, check out Meteorologist David Harker on Facebook and @davidharkerwx on X.`,
-  greeting: 'Here is your local forecast, brought to you by Meteorologist David Harker.',
+  crawl: `Thank you for watching The Prism Network!`,
+  greeting: 'Show me the sunny!',
   language: 'en-US', // Supported in TWC API
   countryCode: 'US', // Supported in TWC API (for postal key)
-  units: 'e', // Supported in TWC API (e = English (imperial), m = Metric, h = Hybrid (UK)),
+  units: 'm', // Supported in TWC API (e = English (imperial), m = Metric, h = Hybrid (UK)),
   unitField: 'imperial', // Supported in TWC API. This field will be filled in automatically. (imperial = e, metric = m, uk_hybrid = h)
   loop: false,
   locationMode: "POSTAL",
