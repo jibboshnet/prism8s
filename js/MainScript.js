@@ -97,9 +97,21 @@ function setInformation(){
   setTimeout(startAnimation, 1000);
 }
 
-function setMainBackground(){
-  getElement('background-image').style.backgroundImage = 'url(https://picsum.photos/1920/1080/?random';
+function setMainBackground() {
+  try {
+    const bgUrl = localStorage.getItem('background-url')
+    if (bgUrl) {
+      getElement('background-image').style.backgroundImage = `url(${bgUrl})`
+    } else {
+      // fallback if no background in JSON
+      getElement('background-image').style.backgroundImage = 'url(https://picsum.photos/1920/1080/?random)'
+    }
+  } catch (err) {
+    console.warn('[Prism] Failed to set background', err)
+    getElement('background-image').style.backgroundImage = 'url(https://picsum.photos/1920/1080/?random)'
+  }
 }
+
 
 function checkStormMusic(){
   if(currentCondition.toLowerCase().includes("storm")){
